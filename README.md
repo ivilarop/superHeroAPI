@@ -108,6 +108,6 @@ Las pruebas se encargan de validar las siguientes casuisticas:
 
 ## Autores ✒️
 
-* **Ivan Vilaró** - *Trabajo Inicial* - [ivilarop](https://github.com/ivilarop)
+* **Ivan Vilaró** - *Freelance Senior Java* - [ivilarop](https://github.com/ivilarop)
 
 ---
