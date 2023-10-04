@@ -1,0 +1,16 @@
+version: '3.3'
+services:
+  app:
+    image: 'superhero-api:latest'
+    build: .
+    links:
+      - redis
+  redis:
+    image: redis:latest
+    volumes:
+      - redis-data:/data
+    ports:
+      - "6379:6379"
+volumes:
+  redis-data:
+    driver: local
