@@ -10,78 +10,78 @@ _Mantenimiento CRUD de súper héroes._
 
 Arrancar la aplicación:
 
-mvn clean spring-boot:run
+    mvn clean spring-boot:run
 
 Crear un fichero JAR del proyecto
 
-mvn clean package
+    mvn clean package
 
 Arracar aplicación desde el fichero jar, default profile
 
-java -jar target/superheroAPI-1.0.0.jar
+    java -jar target/superheroAPI-1.0.0.jar
 
 Petición signUp
 
-curl --location 'http://localhost:8080/api/v1/auth/signup' \
---header 'Content-Type: application/json' \
---data-raw '{
-    "firstName": "ivan",
-    "lastName": "vilaro",
-    "email": "vilaro.ivan@gmail.com",
-    "password": "12345"
-}'
+    curl --location 'http://localhost:8080/api/v1/auth/signup' \
+    --header 'Content-Type: application/json' \
+    --data-raw '{
+        "firstName": "ivan",
+        "lastName": "vilaro",
+        "email": "vilaro.ivan@gmail.com",
+        "password": "12345"
+    }'
 
 Petición signIn y generar token autenticación
 
-curl --location 'http://localhost:8080/api/v1/auth/signin' \
---header 'Content-Type: application/json' \
---data-raw '{
-    "email":"vilaro.ivan@gmail.com",
-    "password":"12345"
-}'
+    curl --location 'http://localhost:8080/api/v1/auth/signin' \
+    --header 'Content-Type: application/json' \
+    --data-raw '{
+        "email":"vilaro.ivan@gmail.com",
+        "password":"12345"
+    }'
 
 Petición para consultar todos los Súper héroesc
 
-curl --location 'http://localhost:8080/api/v1/superHeroes' \
---header 'Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ2aWxhcm8uaXZhbkBnbWFpbC5jb20iLCJpYXQiOjE2OTY0MjYxNDMsImV4cCI6MTY5NjQyNzU4M30.3U93NBf2I1Smx-EETEfcufdL6WWzIa3h_KJq8kxVUDk'
+    curl --location 'http://localhost:8080/api/v1/superHeroes' \
+    --header 'Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ2aWxhcm8uaXZhbkBnbWFpbC5jb20iLCJpYXQiOjE2OTY0MjYxNDMsImV4cCI6MTY5NjQyNzU4M30.3U93NBf2I1Smx-EETEfcufdL6WWzIa3h_KJq8kxVUDk'
 
 Petición para consultar un único súper héroe por id
 
-curl --location 'http://localhost:8080/api/v1/superHeroes/1' \
---header 'Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ2aWxhcm8uaXZhbkBnbWFpbC5jb20iLCJpYXQiOjE2OTYzNTgxMDYsImV4cCI6MTY5NjM1OTU0Nn0.iN1AtWVkLXqljaViLMwzc9PyiveTZjUa31a7JXUa8dk'
+    curl --location 'http://localhost:8080/api/v1/superHeroes/1' \
+    --header 'Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ2aWxhcm8uaXZhbkBnbWFpbC5jb20iLCJpYXQiOjE2OTYzNTgxMDYsImV4cCI6MTY5NjM1OTU0Nn0.iN1AtWVkLXqljaViLMwzc9PyiveTZjUa31a7JXUa8dk'
 
 Petición para consultar todos los súper héroes que contienen, en su nombre, el valor de un parámetro enviado en la petición
 
-curl --location 'http://localhost:8080/api/v1/superHeroes/name/sup' \
---header 'Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ2aWxhcm8uaXZhbkBnbWFpbC5jb20iLCJpYXQiOjE2OTYzNTgxMDYsImV4cCI6MTY5NjM1OTU0Nn0.iN1AtWVkLXqljaViLMwzc9PyiveTZjUa31a7JXUa8dk'
+    curl --location 'http://localhost:8080/api/v1/superHeroes/name/sup' \
+    --header 'Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ2aWxhcm8uaXZhbkBnbWFpbC5jb20iLCJpYXQiOjE2OTYzNTgxMDYsImV4cCI6MTY5NjM1OTU0Nn0.iN1AtWVkLXqljaViLMwzc9PyiveTZjUa31a7JXUa8dk'
 
 Petición para crear un súper héroes
 
-curl --location 'http://localhost:8080/api/v1/superHeroes' \
---header 'Content-Type: application/json' \
---header 'Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ2aWxhcm8uaXZhbkBnbWFpbC5jb20iLCJpYXQiOjE2OTYzNTgxMDYsImV4cCI6MTY5NjM1OTU0Nn0.iN1AtWVkLXqljaViLMwzc9PyiveTZjUa31a7JXUa8dk' \
---data '{
-    "name":"Ironman"
-}'
+    curl --location 'http://localhost:8080/api/v1/superHeroes' \
+    --header 'Content-Type: application/json' \
+    --header 'Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ2aWxhcm8uaXZhbkBnbWFpbC5jb20iLCJpYXQiOjE2OTYzNTgxMDYsImV4cCI6MTY5NjM1OTU0Nn0.iN1AtWVkLXqljaViLMwzc9PyiveTZjUa31a7JXUa8dk' \
+    --data '{
+        "name":"Ironman"
+    }'
 
 Petición para modificar un súper héroe
 
-curl --location --request PUT 'http://localhost:8080/api/v1/superHeroes/1' \
---header 'Content-Type: application/json' \
---header 'Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ2aWxhcm8uaXZhbkBnbWFpbC5jb20iLCJpYXQiOjE2OTYzNTgxMDYsImV4cCI6MTY5NjM1OTU0Nn0.iN1AtWVkLXqljaViLMwzc9PyiveTZjUa31a7JXUa8dk' \
---data '{
-    "id":"1",
-    "name":"Wonder Woman"
-}'
+    curl --location --request PUT 'http://localhost:8080/api/v1/superHeroes/1' \
+    --header 'Content-Type: application/json' \
+    --header 'Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ2aWxhcm8uaXZhbkBnbWFpbC5jb20iLCJpYXQiOjE2OTYzNTgxMDYsImV4cCI6MTY5NjM1OTU0Nn0.iN1AtWVkLXqljaViLMwzc9PyiveTZjUa31a7JXUa8dk' \
+    --data '{
+        "id":"1",
+        "name":"Wonder Woman"
+    }'
 
 Petición para borrar un súper héroe
 
-curl --location --request DELETE 'http://localhost:8080/api/v1/superHeroes/1' \
---header 'Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ2aWxhcm8uaXZhbkBnbWFpbC5jb20iLCJpYXQiOjE2OTYzNTgxMDYsImV4cCI6MTY5NjM1OTU0Nn0.iN1AtWVkLXqljaViLMwzc9PyiveTZjUa31a7JXUa8dk'
+    curl --location --request DELETE 'http://localhost:8080/api/v1/superHeroes/1' \
+    --header 'Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ2aWxhcm8uaXZhbkBnbWFpbC5jb20iLCJpYXQiOjE2OTYzNTgxMDYsImV4cCI6MTY5NjM1OTU0Nn0.iN1AtWVkLXqljaViLMwzc9PyiveTZjUa31a7JXUa8dk'
 
 ## Ejecutando las pruebas ⚙️
 
-mvn clean test
+    mvn clean test
 
 ### Analice las pruebas end-to-end 🔩
 
